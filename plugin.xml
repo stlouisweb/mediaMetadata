@@ -17,10 +17,10 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="mediaMetadata">
-                <param name="android-package" value="com.stlouisweb.mediaMEtadata.MediaMetadata"/>
+                <param name="android-package" value="com.stlouisweb.mediaMetadata.MediaMetadata"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/MediaMEtadata.java" target-dir="src/com/stlouisweb/mediametadata" />
+        <source-file src="src/android/MediaMetadata.java" target-dir="src/com/stlouisweb/mediametadata" />
     </platform>
 </plugin>
