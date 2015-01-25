@@ -23,7 +23,7 @@ public class MediaMetadata extends CordovaPlugin {
        public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
            try {
                if (GET_MEDIA_METADATA.equals(action)) {
-                       JSONObject arg_object = args.getJSONobject(0);
+                       JSONObject arg_object = args.getJSONObject(0);
                        JSONObject trackinfo = new JSONObject();
                        Intent calIntent = new Intent(Intent.GET_METADATA)
                        .setType("vnd.android.cursor.item/event")
