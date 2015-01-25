@@ -5,10 +5,12 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
+import android.app.Activity;
+import android.content.Intent;
 
 import android.media.MediaMetadataRetriever;
 
-public class MediaMeta extends CordovaPlugin {
+public class MediaMetadata extends CordovaPlugin {
     public static final String GET_MEDIA_METADATA = "getMediaMetadata";
     	public static String ALBUM;
     	public static String ARTIST;
