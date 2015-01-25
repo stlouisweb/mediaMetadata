@@ -27,7 +27,7 @@ public class MediaMetadata extends CordovaPlugin {
                        JSONObject trackinfo = new JSONObject();
                        Intent calIntent = new Intent(Intent.ACTION_VIEW)
                        .setType("vnd.android.cursor.item/event")
-                       .putExtra("fullpath", arg_object.getString("fullpath"));
+                       .putExtra("fullpath", arg_object.getString(fullpath));
                     MediaMetadataRetriever meta = new MediaMetadataRetriever();
                        meta.setDataSource(fullpath);
 
