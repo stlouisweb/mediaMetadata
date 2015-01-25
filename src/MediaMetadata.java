@@ -10,22 +10,34 @@ import android.media.MediaMetadataRetriever;
 
 public class MediaMeta extends CordovaPlugin {
     public static final String GET_MEDIA_METADATA = "getMediaMetadata";
+    	public static String ALBUM;
+    	public static String ARTIST;
+    	public static String TRACKNUMBER;
+    	public static String TITLE;
+
+
 
    @Override
        public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
            try {
                if (GET_MEDIA_METADATA.equals(action)) {
                        JSONObject arg_object = args.getJSONobject(0);
-                       Intent calIntent = new Intent(Intent.ACTION_EDIT)
-                   .setType("vnd.android.cursor.item/event")
-                   .putExtra("beginTime", arg_object.getLong("startTimeMillis"))
-                   .putExtra("endTime", arg_object.getLong("endTimeMillis"))
-                   .putExtra("title", arg_object.getString("title"))
-                   .putExtra("description", arg_object.getString("description"))
-                   .putExtra("eventLocation", arg_object.getString("eventLocation"));
+                       JSONObject trackinfo = new JSONObject();
+                       Intent calIntent = new Intent(Intent.GET_METADATA)
+                    MediaMetadataRetriever meta = new MediaMetadataRetriever();
+                       meta.setDataSource(fullpath);
 
+                   ALBUM = meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM);
+                   ARTIST = meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST);
+                   TRACKNUMBER = meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER);
+                   TITLE = meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
+
+                    trackinfo.put("album", ALBUM);
+                    trackinfo.put("artist", ARTIST);
+                    trackinfo.put("trackNumber", TRACKNUMBER);
+                    trackinfo.put("title", TITLE);
                    this.cordova.getActivity().startActivity(calIntent);
-                   callbackContext.success();
+                   callbackContext.success(trackinfo);
                    return true;
                }
                callbackContext.error("Invalid action");
