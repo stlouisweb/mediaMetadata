@@ -1,5 +1,5 @@
-module.exports = {
-    mediameta: function(fullpath, successCallback, errorCallback) {
+var mediameta = {
+    createEvent: function(fullpath, successCallback, errorCallback) {
         cordova.exec(
             successCallback, // success callback function
             errorCallback, // error callback function
@@ -10,4 +10,5 @@ module.exports = {
             }]
         );
     }
-};
+}
+module.exports = mediameta;
