@@ -1,5 +1,5 @@
 
-var MediaMeta = {
+window.MediaMeta = {
     createEvent: function(fullpath, successCallback, errorCallback) {
         cordova.exec(
             successCallback, // success callback function
