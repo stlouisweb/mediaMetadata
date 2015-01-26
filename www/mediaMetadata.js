@@ -1,10 +1,9 @@
-var mediaMeta = {
-    createEvent: function(fullpath, callback) {
+var mediameta = {
+    createEvent: function(fullpath, successCallback, errorCallback) {
         cordova.exec(
-            callback,
-            function(err) {
-                callback('Nothing to echo.');
-            },'MediaMetadata', // mapped to our native Java class called "CalendarPlugin"
+            successCallback, // success callback function
+            errorCallback, // error callback function
+            'MediaMetadata', // mapped to our native Java class called "MediaMetadata"
             'getMediaMetadata', // with this action name
             [{                  // and this array of custom arguments to create our entry
                 "fullpath": fullpath
@@ -12,4 +11,4 @@ var mediaMeta = {
         );
     }
 }
-module.exports = mediaMeta;
+module.exports = mediameta;
