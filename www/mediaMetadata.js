@@ -1,7 +1,7 @@
-var exec = require('cordova/exec');
+
 var MediaMeta = {
     createEvent: function(fullpath, successCallback, errorCallback) {
-        exec(
+        cordova.exec(
             successCallback, // success callback function
             errorCallback, // error callback function
             'MediaMetadata', // mapped to our native Java class called "MediaMetadata"
