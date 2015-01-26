@@ -10,7 +10,7 @@
 
 
     <js-module src="www/mediaMetadata.js" name="MediaMetadata">
-        <clobbers target="MediaMetadata" />
+        <clobbers target="window.mediaMetadata" />
     </js-module>
 
     <!-- android -->
