@@ -1,4 +1,5 @@
-var mediameta = function(fullpath, successCallback, errorCallback) {
+module.exports = {
+    mediameta: function(fullpath, successCallback, errorCallback) {
         cordova.exec(
             successCallback, // success callback function
             errorCallback, // error callback function
@@ -8,5 +9,5 @@ var mediameta = function(fullpath, successCallback, errorCallback) {
                 "fullpath": fullpath
             }]
         );
-}
-module.exports = mediameta;
+    }
+};
