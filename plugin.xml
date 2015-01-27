@@ -11,7 +11,7 @@
 
 
     <js-module src="www/mediaMetadata.js" name="MediaMetadata">
-        <clobbers target="cordova.plugins.mediaMetadata" />
+        <clobbers target="window.Media" />
     </js-module>
 
     <!-- android -->
