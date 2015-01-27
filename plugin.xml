@@ -18,7 +18,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="MediaMetadata">
-                <param name="android-package" value="com.stlouisweb.mediaMetadata.MediaMetadata"/>
+                <param name="android-package" value="com.stlouisweb.mediametadata.MediaMetadata"/>
             </feature>
         </config-file>
 
